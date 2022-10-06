@@ -1,0 +1,88 @@
+@host= http://localhost:8800
+###
+get {{host}}/
+###
+post  {{host}}/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "manh7",
+    "email": "manh7@gmail.com",
+    "password": "m123456"
+}
+
+###
+post  {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "adu@gmail.com",
+    "password": "aduadu"
+}
+
+
+###
+post  {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "manh7@gmail.com",
+    "password": "m123456"
+}
+
+###
+get  {{host}}/api/users/6338fc18f6764c2d5cc1da2f
+
+###
+put  {{host}}/api/users/6339520f955b963ed0562d8a/follow
+Content-Type: application/json
+
+{
+    "userId": "63396f9ca368d1448078bf0c"
+}
+
+###
+put  {{host}}/api/users/6339520f955b963ed0562d8a/unfollow
+Content-Type: application/json
+
+{
+    "userId": "63396f9ca368d1448078bf0c"
+}
+
+###
+post  {{host}}/api/posts
+Content-Type: application/json
+
+{
+    "userId": "6339520f955b963ed0562d8a",
+    "desc": "adu w r r",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpt3zTXwtvAnk0tR4tOzfhkwoSfPZ8ls4b7w&usqp=CAU"
+}
+
+
+###
+post  {{host}}/api/conversations
+Content-Type: application/json
+
+{
+    "senderId": "6339520f955b963ed0562d8a",
+    "receiverId": "63396f9ca368d1448078bf0c"
+}
+
+
+###
+post  {{host}}/api/messages
+Content-Type: application/json
+
+{
+    "conversationId": "633c4c3ade6aad3360aae425",
+    "sender": "6339520f955b963ed0562d8a",
+    "text": "HAY BOY"
+}
+
+###
+get  {{host}}/api/messages/633c4c3ade6aad3360aae425
+
+###
+get  {{host}}/api/conversations/6339520f955b963ed0562d8a
+
